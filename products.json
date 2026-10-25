@@ -1,0 +1,23 @@
+{
+    "notebooks": {
+        "a4": 20,
+        "a5": 15,
+        "spiral": 30,
+        "diary": 15
+    },
+    "pens": {
+        "blue": 50,
+        "black": 40,
+        "red": 25,
+        "fountain": 5
+    },
+    "pencils": {
+        "hb": 60,
+        "2b": 45,
+        "mechanical": 20
+    },
+    "erasers": {
+        "white": 35,
+        "dustfree": 18
+    }
+}

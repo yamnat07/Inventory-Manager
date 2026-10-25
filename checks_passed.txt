@@ -1,0 +1,226 @@
+INVENTORY MANAGER - CHECKS THAT PASSED
+======================================
+
+This file lists every check the program passed, in simple words.
+
+HOW THE CHECKS WERE DONE
+- Each check ran the real program on a COPY of the files, so the real data was
+  never touched.
+- The "typing" was done by a script. It fed the program the same answers a person
+  would type (including wrong ones) and then looked at what the program printed
+  and what ended up saved in products.json.
+- A check only counts as PASSED if the program did the right thing, did not crash,
+  and left the saved file correct and readable.
+
+SCORE
+  Main checks .................. 82 passed, 0 failed
+  New-product checks ........... 12 passed, 0 failed
+  Extra checks ................. 3 passed, 0 failed
+  Save-safety tests ............ 5 passed, 0 failed
+  Random sessions .............. 500 ran, 0 problems
+  ------------------------------------------------------
+  Total of the numbered checks . 102 passed, 0 failed
+  (plus the 500 random sessions)
+
+
+======================================================================
+PART 1 - MAIN CHECKS (82)
+======================================================================
+
+THE MENU (4 checks)
+ PASS  Choosing "Exit" says "Thank you!", ends the program normally, and does not
+       change the saved file.
+ PASS  "See whole inventory" shows every category and returns to the menu.
+ PASS  Typing nothing, a wrong number, letters, "07", a full-width digit, "exit",
+       or a 5,000-letter word is politely refused every time.
+ PASS  Typing the exit number with an extra space after it still exits.
+
+LOOKING THINGS UP (4 checks)
+ PASS  Looking up a category works even if the name is typed as " PENS " (extra
+       spaces and capital letters are cleaned up).
+ PASS  When looking up a category, pressing Enter, typing only spaces, or typing a
+       name that does not exist gives a helpful message, and then a correct name
+       works.
+ PASS  Looking up a product with messy typing (" Pens ", " BLUE ") shows the right
+       quantity.
+ PASS  When looking up a product, an empty name, a wrong category, and a wrong
+       product are all handled, and then a correct one works.
+
+CHANGING A QUANTITY (16 checks)
+ PASS  Every kind of wrong answer is refused one by one (empty category, wrong
+       category, empty product, wrong product, empty quantity, letters, a negative
+       number, a decimal), and then 0 is accepted and saved.
+ PASS  A quantity typed with extra spaces (" 75 ") is saved as a proper whole
+       number.
+ PASS  A very large number (20 digits) is saved without any crash.
+ PASS  These 12 unusual ways of typing a quantity never crash the program (it
+       either accepts them or politely refuses them): +5, 5.0, 1e3, 1_000, an
+       Arabic-style digit, 0x10, -0, 00, "5 5", "five", only spaces, and a tab
+       before a number. (12 checks)
+ PASS  Changing the same product three times in a row ends with the last value.
+
+CREATING A NEW CATEGORY (16 checks)
+ PASS  Wrong answers are refused one by one (empty name, a name that already
+       exists, empty product, empty quantity, letters, a negative number), and
+       then a correct answer creates the category.
+ PASS  Names with spaces and capitals are cleaned up, and a quantity of 0 is
+       allowed.
+ PASS  Typing CANCEL (in any capital letters) at the category name cancels.
+ PASS  A first product named "Cancel" also just cancels (no product with that
+       name is created).
+ PASS  Cancelling at the quantity step leaves the saved file exactly as it was,
+       byte for byte.
+ PASS  A name made only of spaces is refused.
+ PASS  Category names of these 9 unusual kinds are saved correctly, the file stays
+       valid, and they can be looked up again: with spaces, with an accented
+       letter (cafe with an accent), with quote marks, with a backslash, 500
+       letters long, with a tab inside, with an emoji, with { } brackets, and with
+       a slash. (9 checks)
+ PASS  Even when a name has accented letters or emoji, the saved file contains only
+       plain characters, so it can never become unreadable.
+
+DELETING (6 checks)
+ PASS  Deleting a category works after wrong answers (empty, unknown name).
+ PASS  Deleting a product works after wrong answers (empty, unknown category,
+       empty product, unknown product).
+ PASS  Deleting a product works with messy typing (" PENS ", " RED ").
+ PASS  In the delete menu, empty, letters, and a wrong number are refused, and
+       cancel works.
+ PASS  Deleting every product in a category leaves an empty category, and nothing
+       crashes when it is viewed afterwards.
+ PASS  A whole session (change a quantity, create a category, delete a product,
+       delete a category) ends with exactly the right data in the file.
+
+SAVING AND RESTARTING (3 checks)
+ PASS  A category created in one run is still there when the program is started
+       again.
+ PASS  A change made in a second run is added on top of the earlier changes,
+       nothing is lost.
+ PASS  The saved file is always valid, is neatly spaced (4 spaces), and every
+       quantity is a whole number.
+
+CANCEL (14 checks)
+ For each of these places, typing "cancel" goes back to the menu, prints a
+ cancel message, and leaves the saved file exactly the same, byte for byte:
+ PASS  1. when looking up a category
+ PASS  2. when looking up a product - at the category question
+ PASS  3. when looking up a product - at the product question
+ PASS  4. when changing a quantity - at the category question
+ PASS  5. when changing a quantity - at the product question
+ PASS  6. when changing a quantity - at the quantity question
+ PASS  7. when changing a quantity - typing " CANCEL " with spaces and capitals
+ PASS  8. when creating a category - at the category name
+ PASS  9. when creating a category - at the first product name
+ PASS  10. when creating a category - at the quantity
+ PASS  11. in the delete menu
+ PASS  12. when deleting a category
+ PASS  13. when deleting a product - at the category question
+ PASS  14. when deleting a product - at the product question
+
+EMPTY INVENTORY AND EMPTY CATEGORIES (11 checks)
+ PASS  With an inventory that has nothing in it, showing the whole inventory does
+       not crash.
+ PASS  With an empty inventory, looking up a category, looking up a product,
+       changing a quantity, deleting a category, and deleting a product are each
+       handled politely and change nothing. (5 checks)
+ PASS  With an empty inventory, the first category can be created.
+ PASS  In a category that has no products, looking up a product, changing a
+       quantity, and deleting a product are each handled politely and change
+       nothing. (3 checks)
+ PASS  An empty category shows as { } when looked up.
+ (That is 1 + 5 + 1 + 3 + 1 = 11 checks.)
+
+PROBLEMS WITH THE DATA FILE (8 checks)
+ PASS  If products.json is missing, the program says so and ends cleanly (no scary
+       error screen).
+ PASS  If the file is empty, it says the file is damaged and ends cleanly.
+ PASS  If the file contains broken text, it says the file is damaged and ends
+       cleanly.
+ PASS  If the file has a stray comma at the end, same result.
+ PASS  If the file was cut off halfway, same result.
+ PASS  If the file starts with a hidden "BOM" marker (some editors add this), same
+       result.
+ PASS  If the file was saved in the wrong text format (not readable text), same
+       result.
+ PASS  If a quantity in the file is written as text ("20"), the program can still
+       show it and change it.
+
+
+======================================================================
+PART 2 - ADDING A NEW PRODUCT TO AN EXISTING CATEGORY (12 checks)
+======================================================================
+ PASS  A new product is saved with the right quantity, and all the old products in
+       that category are untouched.
+ PASS  Wrong answers are refused one by one (empty category, unknown category,
+       empty product, a product that already exists, empty quantity, letters, a
+       negative number, a decimal), and then 0 is accepted.
+ PASS  Messy typing (" PENS ", " GREEN ", " 5 ") is cleaned up and saved correctly.
+ PASS  Typing "cancel" at the category question leaves the file unchanged and goes
+       back to the menu.
+ PASS  Typing "cancel" at the product name does the same.
+ PASS  Typing "cancel" at the quantity does the same.
+ PASS  Typing "CANCEL" after several wrong answers still cancels cleanly.
+ PASS  A new product can be added to a category that has nothing in it.
+ PASS  A product named "Cancel" cannot be created (it just cancels).
+ PASS  A product that was just added can be looked up straight away.
+ PASS  A product that was just added can have its quantity changed.
+ PASS  A product that was just added can be deleted, and the data goes back to
+       exactly how it was.
+
+
+======================================================================
+PART 3 - EXTRA CHECKS (3)
+======================================================================
+ PASS  Using "Create a new Product" from the real menu (choice 7) works from start
+       to finish, and the new product shows up in "See whole inventory".
+ PASS  After many normal saves, no leftover temporary file (products.tmp) is left
+       in the folder.
+ PASS  Adding a product, changing its quantity, and deleting it again brings the
+       data back to exactly the original content.
+
+
+======================================================================
+PART 4 - SAVE-SAFETY TESTS (5)
+======================================================================
+ Here the program was stopped on purpose at the exact moment it was saving. The
+ important question: is the real data file still complete?
+ PASS  Changing a quantity: the file stayed complete.
+ PASS  Creating a category: the file stayed complete.
+ PASS  Adding a new product: the file stayed complete.
+ PASS  Deleting a category: the file stayed complete.
+ PASS  Deleting a product: the file stayed complete.
+ WHY IT PASSES: the program writes the new data to a separate temporary file
+ first, and only swaps it in when it is finished. A crash in the middle can never
+ leave the real file half-written or empty.
+
+
+======================================================================
+PART 5 - 500 RANDOM SESSIONS
+======================================================================
+ A script used the program 500 times, each time typing a random mix of answers:
+ empty answers, spaces, "cancel" in different capitals, menu numbers, existing and
+ non-existing names, letters, negative numbers, decimals, huge numbers, accented
+ letters, quotes, backslashes, and a 300-letter word. After each session it
+ checked:
+ PASS  The program never crashed and never froze.
+ PASS  It always exited normally.
+ PASS  products.json was always valid, with only real names and whole-number
+       quantities of 0 or more.
+ PASS  No temporary file was ever left behind.
+ Result: 500 sessions, 0 problems. About 100 of them changed the data, and the
+ data was still correct every time.
+
+
+======================================================================
+THINGS THESE CHECKS DO NOT COVER (so you know the limits)
+======================================================================
+ - If someone edits products.json by hand into a wrong shape (for example, a
+   category that is a number instead of a list of products), the program can stop
+   with an error. The program itself never saves such a file.
+ - Pressing Ctrl+C, or closing the window in the middle of typing, ends the
+   program with Python's normal message.
+ - Odd number styles such as "+5" or "1_000" are accepted as quantities because
+   Python accepts them, and there is no maximum quantity.
+ - Deleting the last product of a category leaves the empty category in the file.
+ - The checks were run on one computer setup (Python 3.13). The program has not
+   been tried on other Python versions or operating systems.

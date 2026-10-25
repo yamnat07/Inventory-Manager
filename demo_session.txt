@@ -1,0 +1,718 @@
+==========================================================================
+PART 1 - Browsing: menu, invalid choices, view everything, a category, a product
+==========================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~
+WELCOME TO THE INVENTORY
+~~~~~~~~~~~~~~~~~~~~~~~~~
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:
+A Choice must be entered!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:9
+Enter a valid choice!!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:abc
+Enter a valid choice!!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:1
+notebooks-->{'a4': 20, 'a5': 15, 'spiral': 30, 'diary': 15}
+pens-->{'blue': 50, 'black': 40, 'red': 25, 'fountain': 5}
+pencils-->{'hb': 60, '2b': 45, 'mechanical': 20}
+erasers-->{'white': 35, 'dustfree': 18}
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:2
+If you want to cancel this task, just enter (cancel) in any input line. 
+Categories available:
+Notebooks
+Pens
+Pencils
+Erasers
+Enter the category name below:
+Enter the category name:
+Enter a category name!!
+Categories available:
+Notebooks
+Pens
+Pencils
+Erasers
+Enter the category name below:
+Enter the category name:books
+This category doesn`t exist!
+Categories available:
+Notebooks
+Pens
+Pencils
+Erasers
+Enter the category name below:
+Enter the category name: PENS 
+{'blue': 50, 'black': 40, 'red': 25, 'fountain': 5}
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:3
+If you want to cancel this task, just enter (cancel) in any input line. 
+Categories available:
+Notebooks
+Pens
+Pencils
+Erasers
+Enter the product`s category:pens
+Enter product`s name:
+Enter a Product name!!
+Enter product`s name:nope
+Such Product doesn`t exist!!
+Enter product`s name:Blue
+Quantity Available: 50
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:8
+Thank you!
+
+==========================================================================
+PART 2 - Updating a quantity (every kind of bad input first)
+==========================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~
+WELCOME TO THE INVENTORY
+~~~~~~~~~~~~~~~~~~~~~~~~~
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:4
+If you want to cancel this task, just enter (cancel) in any input line. 
+Categories Available:
+Notebooks
+Pens
+Pencils
+Erasers
+Enter the category:
+Enter a category name!!
+Categories Available:
+Notebooks
+Pens
+Pencils
+Erasers
+Enter the category:tools
+This category doesn`t exist!!
+Categories Available:
+Notebooks
+Pens
+Pencils
+Erasers
+Enter the category:pens
+Enter product`s name:
+Enter a product name!!
+Enter product`s name:nope
+Such product doesn`t exist!!
+Enter product`s name:blue
+Enter quantity of product:
+Enter a number!!
+Enter quantity of product:abc
+Enter a number for quantity!!
+Enter quantity of product:-3
+Product`s quantity must be 0 or greater!!
+Enter quantity of product:2.5
+Enter a number for quantity!!
+Enter quantity of product:75
+Products updated successfully.
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:4
+If you want to cancel this task, just enter (cancel) in any input line. 
+Categories Available:
+Notebooks
+Pens
+Pencils
+Erasers
+Enter the category:pens
+Enter product`s name:red
+Enter quantity of product:0
+Products updated successfully.
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:3
+If you want to cancel this task, just enter (cancel) in any input line. 
+Categories available:
+Notebooks
+Pens
+Pencils
+Erasers
+Enter the product`s category:pens
+Enter product`s name:red
+Quantity Available: 0
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:8
+Thank you!
+
+--- products.json after the updates (blue=75, red=0) ---
+{
+    "notebooks": {
+        "a4": 20,
+        "a5": 15,
+        "spiral": 30,
+        "diary": 15
+    },
+    "pens": {
+        "blue": 75,
+        "black": 40,
+        "red": 0,
+        "fountain": 5
+    },
+    "pencils": {
+        "hb": 60,
+        "2b": 45,
+        "mechanical": 20
+    },
+    "erasers": {
+        "white": 35,
+        "dustfree": 18
+    }
+}
+
+==========================================================================
+PART 3 - Creating a category
+==========================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~
+WELCOME TO THE INVENTORY
+~~~~~~~~~~~~~~~~~~~~~~~~~
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:5
+If you want to cancel this task, just enter (cancel) in any input line. 
+Enter new category name:
+Enter a category name!!
+Enter new category name:pens
+pens category already exists!
+Enter new category name:markers
+Enter new category`s product:
+Enter a Product name!!
+Enter new category`s product:green
+Enter quantity of product:
+Enter a number!!
+Enter quantity of product:abc
+Enter a number for quantity!!
+Enter quantity of product:-1
+Product`s quantity must be 0 or greater!!
+Enter quantity of product:12
+New Category created successfully!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:2
+If you want to cancel this task, just enter (cancel) in any input line. 
+Categories available:
+Notebooks
+Pens
+Pencils
+Erasers
+Markers
+Enter the category name below:
+Enter the category name:markers
+{'green': 12}
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:8
+Thank you!
+
+==========================================================================
+PART 3b - Adding a new product to an existing category (menu option 7)
+==========================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~
+WELCOME TO THE INVENTORY
+~~~~~~~~~~~~~~~~~~~~~~~~~
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:7
+If you want to cancel this task, just enter (cancel) in any input line. 
+Enter category name:
+Enter a category name!!
+Enter category name:books
+Enter a valid category!
+Enter category name:pens
+Enter new product`s name:
+Enter a Product name!!
+Enter new product`s name:blue
+This product already exist in pens
+Enter new product`s name:green
+Enter quantity of product:
+Enter a number!!
+Enter quantity of product:abc
+Enter a number for quantity!!
+Enter quantity of product:-3
+Product`s quantity must be 0 or greater!!
+Enter quantity of product:2.5
+Enter a number for quantity!!
+Enter quantity of product:40
+New Product created in pens successfully.
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:3
+If you want to cancel this task, just enter (cancel) in any input line. 
+Categories available:
+Notebooks
+Pens
+Pencils
+Erasers
+Markers
+Enter the product`s category:pens
+Enter product`s name:green
+Quantity Available: 40
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:8
+Thank you!
+
+==========================================================================
+PART 4 - Deleting a product and a category
+==========================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~
+WELCOME TO THE INVENTORY
+~~~~~~~~~~~~~~~~~~~~~~~~~
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:6
+If you want to cancel this task, just enter (cancel) in any input line. 
+1.Delete a category.
+2.Delete a product.
+Enter your choice:
+Enter a valid number from above as your choice!!
+If you want to cancel this task, just enter (cancel) in any input line. 
+1.Delete a category.
+2.Delete a product.
+Enter your choice:abc
+Enter a number!!
+If you want to cancel this task, just enter (cancel) in any input line. 
+1.Delete a category.
+2.Delete a product.
+Enter your choice:3
+Enter a number!!
+If you want to cancel this task, just enter (cancel) in any input line. 
+1.Delete a category.
+2.Delete a product.
+Enter your choice:2
+If you want to cancel this task, just enter (cancel) in any input line. 
+Enter category name:markers
+Enter product name :
+Enter a Product name!!
+Enter product name :nope
+This product doesn`t exist in markers category!
+Enter product name :green
+Product deleted successfully!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:6
+If you want to cancel this task, just enter (cancel) in any input line. 
+1.Delete a category.
+2.Delete a product.
+Enter your choice:1
+If you want to cancel this task, just enter (cancel) in any input line. 
+Enter category name:
+Enter a category name!!
+Enter category name:zzz
+zzz category doesn`t exist!
+Enter category name:markers
+markers category deleted successfully!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:6
+If you want to cancel this task, just enter (cancel) in any input line. 
+1.Delete a category.
+2.Delete a product.
+Enter your choice:1
+If you want to cancel this task, just enter (cancel) in any input line. 
+Enter category name:erasers
+erasers category deleted successfully!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:1
+notebooks-->{'a4': 20, 'a5': 15, 'spiral': 30, 'diary': 15}
+pens-->{'blue': 75, 'black': 40, 'red': 0, 'fountain': 5, 'green': 40}
+pencils-->{'hb': 60, '2b': 45, 'mechanical': 20}
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:8
+Thank you!
+
+--- products.json after the deletes (markers gone, erasers gone) ---
+{
+    "notebooks": {
+        "a4": 20,
+        "a5": 15,
+        "spiral": 30,
+        "diary": 15
+    },
+    "pens": {
+        "blue": 75,
+        "black": 40,
+        "red": 0,
+        "fountain": 5,
+        "green": 40
+    },
+    "pencils": {
+        "hb": 60,
+        "2b": 45,
+        "mechanical": 20
+    }
+}
+
+==========================================================================
+PART 5 - Cancel at every level (nothing changes in the file)
+==========================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~
+WELCOME TO THE INVENTORY
+~~~~~~~~~~~~~~~~~~~~~~~~~
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:2
+If you want to cancel this task, just enter (cancel) in any input line. 
+Categories available:
+Notebooks
+Pens
+Pencils
+Enter the category name below:
+Enter the category name:cancel
+The task has been cancelled!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:3
+If you want to cancel this task, just enter (cancel) in any input line. 
+Categories available:
+Notebooks
+Pens
+Pencils
+Enter the product`s category:pens
+Enter product`s name:cancel
+The task has been cancelled!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:4
+If you want to cancel this task, just enter (cancel) in any input line. 
+Categories Available:
+Notebooks
+Pens
+Pencils
+Enter the category:pens
+Enter product`s name:blue
+Enter quantity of product:cancel
+The task has been cancelled!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:5
+If you want to cancel this task, just enter (cancel) in any input line. 
+Enter new category name:toys
+Enter new category`s product:ball
+Enter quantity of product:CANCEL
+The task has been cancelled!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:7
+If you want to cancel this task, just enter (cancel) in any input line. 
+Enter category name:cancel
+The task has been cancelled!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:7
+If you want to cancel this task, just enter (cancel) in any input line. 
+Enter category name:pens
+Enter new product`s name:cancel
+The task has been cancelled!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:7
+If you want to cancel this task, just enter (cancel) in any input line. 
+Enter category name:pens
+Enter new product`s name:kiwi
+Enter quantity of product:cancel
+The task has been cancelled!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:6
+If you want to cancel this task, just enter (cancel) in any input line. 
+1.Delete a category.
+2.Delete a product.
+Enter your choice:cancel
+This task has been cancelled!!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:6
+If you want to cancel this task, just enter (cancel) in any input line. 
+1.Delete a category.
+2.Delete a product.
+Enter your choice:1
+If you want to cancel this task, just enter (cancel) in any input line. 
+Enter category name:cancel
+The task has been cancelled!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:6
+If you want to cancel this task, just enter (cancel) in any input line. 
+1.Delete a category.
+2.Delete a product.
+Enter your choice:2
+If you want to cancel this task, just enter (cancel) in any input line. 
+Enter category name:pens
+Enter product name :cancel
+The task has been cancelled!
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:8
+Thank you!
+
+==========================================================================
+PART 6 - Changes survive a restart (fresh run reads the saved file)
+==========================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~
+WELCOME TO THE INVENTORY
+~~~~~~~~~~~~~~~~~~~~~~~~~
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:1
+notebooks-->{'a4': 20, 'a5': 15, 'spiral': 30, 'diary': 15}
+pens-->{'blue': 75, 'black': 40, 'red': 0, 'fountain': 5, 'green': 40}
+pencils-->{'hb': 60, '2b': 45, 'mechanical': 20}
+1.See Whole Inventory.
+2.See a category.
+3.See a product.
+4.Update inventory.
+5.Create a new category.
+6.Delete a category/product.
+7.Create a new Product.
+8.Exit.
+Enter your choice:8
+Thank you!
+
+==========================================================================
+PART 7a - products.json is missing
+==========================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~
+WELCOME TO THE INVENTORY
+~~~~~~~~~~~~~~~~~~~~~~~~~
+8.Exit.
+Enter your choice:The Products file isn`t found!
+[program exit code: 0, traceback shown: no]
+
+==========================================================================
+PART 7b - products.json is damaged (broken JSON)
+==========================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~
+WELCOME TO THE INVENTORY
+~~~~~~~~~~~~~~~~~~~~~~~~~
+8.Exit.
+Enter your choice:The Products file is Damaged!
+[program exit code: 0, traceback shown: no]
+
+==========================================================================
+PART 7c - products.json is damaged (wrong encoding)
+==========================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~
+WELCOME TO THE INVENTORY
+~~~~~~~~~~~~~~~~~~~~~~~~~
+8.Exit.
+Enter your choice:The Products file is Damaged!
+[program exit code: 0, traceback shown: no]
